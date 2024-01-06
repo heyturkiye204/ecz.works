@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="tr" data-theme="">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,7 +30,7 @@
                 </div>
                 <div class="referrerApp">
                     <img alt="" src="https://heyteknik.works/nebk/nebe-ys-1.png" aria-hidden="true" width="165" height="40">
-                    <p>Nöbetçi Eczaneler Bilgi Ekranı<span><span id="targetLink">BAĞLANTI YOK</span> (Harici Bağlantı)</p>
+                    <p>Nöbetçi Eczaneler Bilgi Ekranı<span><span id="targetLink2">BAĞLANTI YOK</span></p>
                 </div>
             </header>
 
@@ -41,7 +40,7 @@
                         <form method="post" id="loginForm" name="sifreGirisForm" autocomplete="off">
                             <fieldset>
                                 <h1>Bilgilendirme</h1>
-        <p>Merhaba, şu an <b><span id="targetLink2">UYARI: BAĞLANTI GİRİLMEMİŞ! LÜTFEN GERİ DÖN TUŞUNA BASIN!</span></b> adresine yönlendirileceksiniz. Herhangi bir teknik sıkıntı, dolandırıcılık, içerik kalitesi vs. tarzında sorun olursa bundan <b>Sitemiz sorumlu değildir.</b> Geri dönmek veya Devam etmek istiyor musunuz? Eğer ki Herhangi bir şık seçmezseniz <span class="countdown">25</span> saniye içerisinde ana menüye geri yönlendirileceksiniz...</p>
+        <p>Merhaba, şu an <b><span id="targetLink">UYARI: BAĞLANTI GİRİLMEMİŞ! LÜTFEN GERİ DÖN TUŞUNA BASIN!</span></b> adresine yönlendirileceksiniz. Herhangi bir teknik sıkıntı, dolandırıcılık, içerik kalitesi vs. tarzında sorun olursa bundan <b>Sitemiz sorumlu değildir.</b> Geri dönmek veya Devam etmek istiyor musunuz? Eğer ki Herhangi bir şık seçmezseniz <span class="countdown">25</span> saniye içerisinde ana menüye geri yönlendirileceksiniz...</p>
         <div class="button-container">
             <div class="button don"><a href="https://eczane.heyturkiye.tech/"><span>Geri Dön</span> <span class="arrow">→</span></a></div>
             <div class="button et"><a href="#" id="continueButton"><span>Devam Et</span> <span class="arrow">→</span></a></div>
@@ -85,6 +84,7 @@
         var url = window.location.href;
         var targetLink = decodeURIComponent(url.split("link=")[1]);
         document.querySelector("#targetLink").textContent = targetLink;
+        document.querySelector("#targetLink2").textContent = targetLink2;
 
         // Geri sayımı her saniye azalt
         var countdownInterval = setInterval(function() {
