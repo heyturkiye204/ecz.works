@@ -41,12 +41,12 @@
                     <div class="content">
                         <form method="post" id="loginForm" name="sifreGirisForm" autocomplete="off">
                             <fieldset>
-                                <h1>Hoşgeldiniz!</h1>
-                               Nöbetçi Eczaneler Bilgi Ekranı Yönlendirme Sistemine Hoşgeldiniz! Burdan aramanıza gerek kalmadan, tek tıkla sayfalara ulaşabilirsiniz! (<b>NOT:</b> Bazen yönlendirme sisteminde sayfa yüklenmeyebilir, o yüzden sayfayı 3 kez yenilemenizi tavsiye ederiz.)
-                                <div class="form-row center-item">
-                                    <button class="btn btn-send" name="submitButton" type="button" onclick="showAlert('Nöbetçi Eczaneler Bilgi Ekranı', 'https://ecz.works/yonlendir/nebk')">Nöbetçi Eczaneler Bilgi Ekranı</button>
-                                    <button class="btn btn-send" name="submitButton" type="button" onclick="showAlert('E-dergi', 'https://ecz.works/yonlendir/edergi')">E-dergi Sistemi</button>
-                                </div>
+                                <h1>Bilgilendirme</h1>
+        <p>Merhaba, şu an <b><span id="targetLink">UYARI: BAĞLANTI GİRİLMEMİŞ! LÜTFEN GERİ DÖN TUŞUNA BASIN!</span></b> adresine yönlendirileceksiniz. Herhangi bir teknik sıkıntı, dolandırıcılık, içerik kalitesi vs. tarzında sorun olursa bundan <b>Sitemiz sorumlu değildir.</b> Geri dönmek veya Devam etmek istiyor musunuz? Eğer ki Herhangi bir şık seçmezseniz <span class="countdown">25</span> saniye içerisinde ana menüye geri yönlendirileceksiniz...</p>
+        <div class="button-container">
+            <div class="button don"><a href="https://eczane.heyturkiye.tech/"><span>Geri Dön</span> <span class="arrow">→</span></a></div>
+            <div class="button et"><a href="#" id="continueButton"><span>Devam Et</span> <span class="arrow">→</span></a></div>
+        </div>
                             </fieldset>
                         </form>
                     </div>
