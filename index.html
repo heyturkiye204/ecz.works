@@ -43,8 +43,8 @@
                                 <h1>Hoşgeldiniz!</h1>
                                Nöbetçi Eczaneler Bilgi Ekranı Yönlendirme Sistemine Hoşgeldiniz! Burdan aramanıza gerek kalmadan, tek tıkla sayfalara ulaşabilirsiniz! (<b>NOT:</b> Bazen yönlendirme sisteminde sayfa yüklenmeyebilir, o yüzden sayfayı 3 kez yenilemenizi tavsiye ederiz.)
                                 <div class="form-row center-item">
-                                    <button class="btn btn-send" name="submitButton" type="button" onclick="showAlert('Nöbetçi Eczaneler Bilgi Ekranı', 'https://eczaneler.works/')">Nöbetçi Eczaneler Bilgi Ekranı</button>
-                                    <button class="btn btn-send" name="submitButton" type="button" onclick="showAlert('E-dergi', 'https://e-dergi.eczaneler.works/')">E-dergi Sistemi</button>
+                                    <button class="btn btn-send" name="submitButton" type="button" onclick="showAlert('Nöbetçi Eczaneler Bilgi Ekranı', 'https://ecz.works/yonlendir/nebk')">Nöbetçi Eczaneler Bilgi Ekranı</button>
+                                    <button class="btn btn-send" name="submitButton" type="button" onclick="showAlert('E-dergi', 'https://ecz.works/yonlendir/edergi')">E-dergi Sistemi</button>
                                 </div>
                             </fieldset>
                         </form>
@@ -78,17 +78,17 @@
         }
 
         function cancel() {
-            window.location.href = "https://eczaneler.works/";
+            window.location.href = "https://ecz.works/yonlendir/nebk";
         }
 
         document.getElementById("loginForm").addEventListener("submit", function (event) {
             var selectedButton = document.querySelector(".btn-send:focus");
             if (selectedButton && selectedButton.textContent === "Nöbetçi Eczaneler Bilgi Ekranı") {
                 event.preventDefault();
-                showAlert('Nöbetçi Eczaneler Bilgi Ekranı', 'https://eczaneler.works/');
+                showAlert('Nöbetçi Eczaneler Bilgi Ekranı', 'https://ecz.works/yonlendir/nebk');
             } else if (selectedButton && selectedButton.textContent === "E-Dergi Sistemi") {
                 event.preventDefault();
-                showAlert('E-dergi', 'https://e-dergi.eczaneler.works/');
+                showAlert('E-dergi', 'https://ecz.works/yonlendir/edergi');
             }
         });
     </script>
