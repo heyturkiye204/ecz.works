@@ -69,29 +69,41 @@
     </div>
 
     <script type="text/javascript">
-        function showAlert(method, redirectURL) {
-            alert(method + " seçildi.");
-            if (method === "Nöbetçi Eczaneler Bilgi Ekranı" && confirm("Nöbetçi Eczaneler Bilgi Ekranına yönlendirilmek istediğinize emin misiniz?")) {
-                window.location.href = redirectURL;
-            } else if (method === "E-dergi" && confirm("E-dergi sistemine yönlendirilmek istediğinize emin misiniz?")) {
-                window.location.href = redirectURL;
-            }
-        }
+        // Geri sayım başlangıcı
+        var countdown = 25; // 25 saniye
 
-        function cancel() {
-            window.location.href = "https://ecz.works/yonlendir/nebk";
-        }
+        // Geri dön ve devam et bağlantılarına tıklanırsa geri sayımı durdur
+        document.querySelector(".button.don a").addEventListener("click", stopCountdown);
 
-        document.getElementById("loginForm").addEventListener("submit", function (event) {
-            var selectedButton = document.querySelector(".btn-send:focus");
-            if (selectedButton && selectedButton.textContent === "Nöbetçi Eczaneler Bilgi Ekranı") {
-                event.preventDefault();
-                showAlert('Nöbetçi Eczaneler Bilgi Ekranı', 'https://ecz.works/yonlendir/nebk');
-            } else if (selectedButton && selectedButton.textContent === "E-Dergi Sistemi") {
-                event.preventDefault();
-                showAlert('E-dergi', 'https://ecz.works/yonlendir/edergi');
-            }
+        // Devam et butonuna tıklandığında belirtilen bağlantıya yönlendir
+        document.querySelector("#continueButton").addEventListener("click", function() {
+            var targetLink = document.querySelector("#targetLink").textContent;
+            window.location.href = targetLink;
         });
+
+        // URL'den hedef bağlantıyı al
+        var url = window.location.href;
+        var targetLink = decodeURIComponent(url.split("link=")[1]);
+        document.querySelector("#targetLink").textContent = targetLink;
+
+        // Geri sayımı her saniye azalt
+        var countdownInterval = setInterval(function() {
+            if (countdown <= 0) {
+                clearInterval(countdownInterval);
+                window.location.href = "https://eczane.heyturkiye.tech/";
+            } else {
+                document.querySelector(".countdown").textContent = countdown + "";
+                countdown--;
+            }
+        }, 1000);
+
+        // Geri sayımı durdur
+        function stopCountdown() {
+            clearInterval(countdownInterval);
+            document.querySelector(".countdown").textContent = "";
+            document.querySelector("p").textContent = "Yönlendiriliyorsunuz...";
+        }
+        
     </script>
 </body>
 
