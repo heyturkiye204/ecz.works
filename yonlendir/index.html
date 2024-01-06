@@ -1,5 +1,7 @@
+
 <!DOCTYPE html>
 <html lang="tr" data-theme="">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +32,7 @@
                 </div>
                 <div class="referrerApp">
                     <img alt="" src="https://heyteknik.works/nebk/nebe-ys-1.png" aria-hidden="true" width="165" height="40">
-                    <p>Nöbetçi Eczaneler Bilgi Ekranı<span><span id="targetLink2">BAĞLANTI YOK</span></p>
+                    <p>Nöbetçi Eczaneler Bilgi Ekranı<span>https://www.eczaneler.works</span></p>
                 </div>
             </header>
 
@@ -39,12 +41,12 @@
                     <div class="content">
                         <form method="post" id="loginForm" name="sifreGirisForm" autocomplete="off">
                             <fieldset>
-                                <h1>Bilgilendirme</h1>
-        <p>Merhaba, şu an <b><span id="targetLink">UYARI: BAĞLANTI GİRİLMEMİŞ! LÜTFEN GERİ DÖN TUŞUNA BASIN!</span></b> adresine yönlendirileceksiniz. Herhangi bir teknik sıkıntı, dolandırıcılık, içerik kalitesi vs. tarzında sorun olursa bundan <b>Sitemiz sorumlu değildir.</b> Geri dönmek veya Devam etmek istiyor musunuz? Eğer ki Herhangi bir şık seçmezseniz <span class="countdown">25</span> saniye içerisinde ana menüye geri yönlendirileceksiniz...</p>
-        <div class="button-container">
-            <div class="button don"><a href="https://eczane.heyturkiye.tech/"><span>Geri Dön</span> <span class="arrow">→</span></a></div>
-            <div class="button et"><a href="#" id="continueButton"><span>Devam Et</span> <span class="arrow">→</span></a></div>
-        </div>
+                                <h1>Hoşgeldiniz!</h1>
+                               Nöbetçi Eczaneler Bilgi Ekranı Yönlendirme Sistemine Hoşgeldiniz! Burdan aramanıza gerek kalmadan, tek tıkla sayfalara ulaşabilirsiniz! (<b>NOT:</b> Bazen yönlendirme sisteminde sayfa yüklenmeyebilir, o yüzden sayfayı 3 kez yenilemenizi tavsiye ederiz.)
+                                <div class="form-row center-item">
+                                    <button class="btn btn-send" name="submitButton" type="button" onclick="showAlert('Nöbetçi Eczaneler Bilgi Ekranı', 'https://ecz.works/yonlendir/nebk')">Nöbetçi Eczaneler Bilgi Ekranı</button>
+                                    <button class="btn btn-send" name="submitButton" type="button" onclick="showAlert('E-dergi', 'https://ecz.works/yonlendir/edergi')">E-dergi Sistemi</button>
+                                </div>
                             </fieldset>
                         </form>
                     </div>
@@ -67,43 +69,29 @@
     </div>
 
     <script type="text/javascript">
-        // Geri sayım başlangıcı
-        var countdown = 25; // 25 saniye
-
-        // Geri dön ve devam et bağlantılarına tıklanırsa geri sayımı durdur
-        document.querySelector(".button.don a").addEventListener("click", stopCountdown);
-
-        // Devam et butonuna tıklandığında belirtilen bağlantıya yönlendir
-        document.querySelector("#continueButton").addEventListener("click", function() {
-            var targetLink = document.querySelector("#targetLink", "#targetLink2").textContent;
-            window.location.href = targetLink;
-            window.location.href = targetLink2;
-        });
-
-        // URL'den hedef bağlantıyı al
-        var url = window.location.href;
-        var targetLink = decodeURIComponent(url.split("link=")[1]);
-        document.querySelector("#targetLink").textContent = targetLink;
-        document.querySelector("#targetLink2").textContent = targetLink2;
-
-        // Geri sayımı her saniye azalt
-        var countdownInterval = setInterval(function() {
-            if (countdown <= 0) {
-                clearInterval(countdownInterval);
-                window.location.href = "https://ecz.works/";
-            } else {
-                document.querySelector(".countdown").textContent = countdown + "";
-                countdown--;
+        function showAlert(method, redirectURL) {
+            alert(method + " seçildi.");
+            if (method === "Nöbetçi Eczaneler Bilgi Ekranı" && confirm("Nöbetçi Eczaneler Bilgi Ekranına yönlendirilmek istediğinize emin misiniz?")) {
+                window.location.href = redirectURL;
+            } else if (method === "E-dergi" && confirm("E-dergi sistemine yönlendirilmek istediğinize emin misiniz?")) {
+                window.location.href = redirectURL;
             }
-        }, 1000);
-
-        // Geri sayımı durdur
-        function stopCountdown() {
-            clearInterval(countdownInterval);
-            document.querySelector(".countdown").textContent = "";
-            document.querySelector("p").textContent = "Yönlendiriliyorsunuz...";
         }
-        
+
+        function cancel() {
+            window.location.href = "https://ecz.works/yonlendir/nebk";
+        }
+
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            var selectedButton = document.querySelector(".btn-send:focus");
+            if (selectedButton && selectedButton.textContent === "Nöbetçi Eczaneler Bilgi Ekranı") {
+                event.preventDefault();
+                showAlert('Nöbetçi Eczaneler Bilgi Ekranı', 'https://ecz.works/yonlendir/nebk');
+            } else if (selectedButton && selectedButton.textContent === "E-Dergi Sistemi") {
+                event.preventDefault();
+                showAlert('E-dergi', 'https://ecz.works/yonlendir/edergi');
+            }
+        });
     </script>
 </body>
 
