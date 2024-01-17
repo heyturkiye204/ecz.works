@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" data-theme="">
+<html lang="tr">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +8,16 @@
     <meta name="author" content="">
     <link rel="stylesheet" href="https://cdn2.heyteknik.works/nebk/ys.css">
     <title>Harici Bağlantı Yönlendirme | Yönlendirme Sistemi | Nöbetçi Eczaneler Bilgi Ekranı</title>
-</head>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+        
         body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f0f0f0;
-    padding: 50px;
-    color: black; /* Metin rengi varsayılan olarak siyah */
-}
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f0f0f0;
+            padding: 50px;
+            color: black;
+        }
+
         .button-container {
             text-align: center;
             margin-top: 20px;
@@ -27,46 +28,23 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            background-color: #3498db; /* Renk mavi */
-            color: white; /* Metin rengi beyaz */
-        }
-
-        .button a {
+            background-color: #3498db;
+            color: white;
             text-decoration: none;
-            color: inherit;
-        }
-
-        .button .arrow {
-            margin-left: 5px;
-        }
-
-        .button.don {
-            margin-right: 10px;
-        }
-
-        .button.et {
-            margin-left: 10px;
-        }
-        
-        .button-container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .button {
-            flex: 1;
-            max-width: 150px;
+            display: inline-block;
+            position: relative;
+            margin: 0 10px; /* Boşluk eklemek için margin kullanılır */
         }
     </style>
+</head>
 
-<body data-lang="tr_TR.UTF-8">
+<body lang="tr">
     <div class="wrapper">
         <div class="container">
             <header class="header">
                 <h1>Nöbetçi Eczaneler Bilgi Ekranı</h1>
                 <div class="logo">
-                    <a href="/"> <img src="https://heyteknik.works/nebk/nebe-ys-logo.png"
-                            alt="/"> </a>
+                    <a href="/"> <img src="https://heyteknik.works/nebk/nebe-ys-logo.png" alt="/"> </a>
                 </div>
                 <div class="referrerApp">
                     <img alt="" src="https://heyteknik.works/nebk/nebe-ys-1.png" aria-hidden="true" width="165" height="40">
@@ -80,11 +58,11 @@
                         <form method="post" id="loginForm" name="sifreGirisForm" autocomplete="off">
                             <fieldset>
                                 <h1>Bilgilendirme</h1>
-        <p>Merhaba, şu an <b><span id="targetLink">UYARI: BAĞLANTI GİRİLMEMİŞ! LÜTFEN GERİ DÖN TUŞUNA BASIN!</span></b> adresine yönlendirileceksiniz. Herhangi bir teknik sıkıntı, dolandırıcılık, içerik kalitesi vs. tarzında sorun olursa bundan <b>Sitemiz sorumlu değildir.</b> Geri dönmek veya Devam etmek istiyor musunuz? Eğer ki Herhangi bir şık seçmezseniz <b><span class="countdown">25</span></b> saniye içerisinde ana menüye geri yönlendirileceksiniz...</p>
-        <div class="button-container">
-            <button class="button don"><a href="/"><span>Geri Dön</span> <span class="arrow">→</span></a></button>
-            <button class="button et"><a href="#" id="continueButton"><span>Devam Et</span> <span class="arrow">→</span></a></button>
-        </div>
+                                <p>Merhaba, şu an <b><span id="targetLink">UYARI: BAĞLANTI GİRİLMEMİŞ! LÜTFEN GERİ DÖN TUŞUNA BASIN!</span></b> adresine yönlendirileceksiniz. Herhangi bir teknik sıkıntı, dolandırıcılık, içerik kalitesi vs. tarzında sorun olursa bundan <b>Sitemiz sorumlu değildir.</b> Geri dönmek veya Devam etmek istiyor musunuz? Eğer ki Herhangi bir şık seçmezseniz <b><span class="countdown">25</span></b> saniye içerisinde ana menüye geri yönlendirileceksiniz...</p>
+                                <div class="button-container">
+                                    <a class="button" href="https://ecz.works/">Geri Dön →</a>
+                                    <a class="button" href="#" id="continueButton">Devam Et →</a>
+                                </div>
                             </fieldset>
                         </form>
                     </div>
@@ -92,39 +70,27 @@
             </main>
 
             <footer class="footer-fixed" role="contentinfo">
-                <span class="copyright"><img src="https://heyteknik.works/nebk/nebe-ys-1.png"
-                        class="footer-logo" alt="A" height="24">© 2024, NEBE - Tüm Hakları Saklıdır</span>
+                <span class="copyright"><img src="https://heyteknik.works/nebk/nebe-ys-1.png" class="footer-logo" alt="A" height="24">© 2024, NEBE - Tüm Hakları Saklıdır</span>
                 <ul>
-                    <li>
-                        <a href="https://www.eczaneler.works/hakkimizda" target="_blank">Hakkımızda</a>
-                    </li>
-                    <li>
-                        <a href="https://heytr.live" target="_blank">Geliştirici: Hey Türkiye</a>
-                    </li>
+                    <li><a href="https://www.eczaneler.works/hakkimizda" target="_blank">Hakkımızda</a></li>
+                    <li><a href="https://heytr.live" target="_blank">Geliştirici: Hey Türkiye</a></li>
                 </ul>
             </footer>
         </div>
     </div>
 
     <script type="text/javascript">
-        // Geri sayım başlangıcı
-        var countdown = 25; // 25 saniye
+        var countdown = 25;
 
-        // Geri dön ve devam et bağlantılarına tıklanırsa geri sayımı durdur
-        document.querySelector(".button.don a").addEventListener("click", stopCountdown);
-
-        // Devam et butonuna tıklandığında belirtilen bağlantıya yönlendir
-        document.querySelector("#continueButton").addEventListener("click", function() {
-            var targetLink = document.querySelector("#targetLink").textContent;
-            window.location.href = targetLink;
+        document.getElementById("continueButton").addEventListener("click", function() {
+            var targetLink = document.getElementById("targetLink").textContent;
+            window.location.href = "https://ecz.works/yonlendir/devam?link=" + targetLink;
         });
 
-        // URL'den hedef bağlantıyı al
         var url = window.location.href;
         var targetLink = decodeURIComponent(url.split("link=")[1]);
-        document.querySelector("#targetLink").textContent = targetLink;
+        document.getElementById("targetLink").textContent = targetLink;
 
-        // Geri sayımı her saniye azalt
         var countdownInterval = setInterval(function() {
             if (countdown <= 0) {
                 clearInterval(countdownInterval);
@@ -134,14 +100,6 @@
                 countdown--;
             }
         }, 1000);
-
-        // Geri sayımı durdur
-        function stopCountdown() {
-            clearInterval(countdownInterval);
-            document.querySelector(".countdown").textContent = "";
-            document.querySelector("p").textContent = "Yönlendiriliyorsunuz...";
-        }
-        
     </script>
 </body>
 
