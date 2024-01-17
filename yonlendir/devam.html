@@ -5,7 +5,6 @@
     <meta http-equiv="refresh" content="0;url=">
     <title>Yönlendiriliyorsunuz...</title>
 </head>
-
 <body>
     <script>
         // URL'den hedef bağlantıyı al
@@ -14,9 +13,13 @@
 
         // Belirtilen sürede yönlendirme yap
         setTimeout(function () {
-            window.location.href = targetLink;
+            if (!targetLink) {
+                document.title = 'URL Bulunamadı!';
+                document.body.innerHTML = 'URL boş, hayatın da boş dostum 🤫😀';
+            } else {
+                window.location.href = targetLink;
+            }
         }, 1);
     </script>
 </body>
-
 </html>
