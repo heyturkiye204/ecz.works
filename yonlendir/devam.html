@@ -5,7 +5,6 @@
     <meta http-equiv="refresh" content="0;url=">
     <title>Yönlendiriliyorsunuz...</title>
 </head>
-
 <body>
     <script>
         // URL'den hedef bağlantıyı al
@@ -13,22 +12,9 @@
         var targetLink = decodeURIComponent(url.split("link=")[1]);
 
         // Belirtilen sürede yönlendirme yap
-        if (targetLink) {
-            var redirectTimeout = setTimeout(function () {
-                window.location.href = targetLink;
-            }, 1);
-        } else {
-            document.title = 'URL Bulunamadı!';
-            document.body.innerHTML = 'URL boş, hayatın da boş dostum 🤣 (ciddiye alma)';
-        }
-
-        // Sayfa yüklenmeyi bırak
-        window.addEventListener('load', function() {
-            if (targetLink) {
-                clearTimeout(redirectTimeout);
-            }
-        });
+        setTimeout(function () {
+            window.location.href = targetLink;
+        }, 1);
     </script>
 </body>
-
 </html>
