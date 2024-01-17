@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0;url=">
+    <title>Yönlendiriliyorsunuz...</title>
+</head>
+
+<body>
+    <script>
+        // URL'den hedef bağlantıyı al
+        var url = window.location.href;
+        var targetLink = decodeURIComponent(url.split("link=")[1]);
+
+        // Belirtilen sürede yönlendirme yap
+        setTimeout(function () {
+            window.location.href = targetLink;
+        }, 1);
+    </script>
+</body>
+
+</html>
