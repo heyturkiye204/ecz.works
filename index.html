@@ -91,6 +91,20 @@
                 showAlert('E-dergi', 'https://ecz.works/yonlendir/edergi');
             }
         });
+        document.addEventListener("DOMContentLoaded", function() {
+    // Hızlı IP bilgisi alma servisi (ipinfo.io)
+    fetch('https://ipinfo.io', { headers: { 'Accept': 'application/json' } })
+        .then(response => response.json())
+        .then(data => {
+            var countryCode = data.country;
+
+            if (countryCode !== "TR") {
+                window.location.href = "https://ecz.works/a";
+            }
+        })
+        .catch(error => console.error("IP sorgusu başarısız: ", error));
+});
+
     </script>
 </body>
 
